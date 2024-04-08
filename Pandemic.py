@@ -68,6 +68,10 @@ class Pandemic:
     discard = []
 
     def startup():
+
+        #startup, ask for player count, ask starting cards, so that we are able to properly put in epidemics and understand what cards are left
+        #cards in player hands are considered the same as in discard (no implementation of player strategy yet)
+
         #COMMENT FOR DEBUG PURPOSES
         #player_count = int(input("Welcome to Pandemic! How many players will be in this game? "))
         player_count = 3
@@ -99,6 +103,7 @@ class Pandemic:
                 player_data[player_num] = True, temp_hand
         
     def epidemic_insert():
+        #divide the city card deck into however many depending on # of epidemic cards, insert the epidemic card, shuffle, and put a list into the list of chunks of X cards
         city_card_stack_shuffled = []
         import random
         left = 0 
@@ -110,8 +115,11 @@ class Pandemic:
             city_card_stack_shuffled.append(temp_portion)
             left = right + 1
             right += len(city_card_stack) // epi_count
-        city_card_stack_shuffled = sum(city_card_stack_shuffled, [])
+        
         print(city_card_stack_shuffled)
-                
+
+    def play():
+        for i in range(i, -1, -1):
+
     startup()
     epidemic_insert()
