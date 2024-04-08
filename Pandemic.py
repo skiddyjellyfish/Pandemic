@@ -68,8 +68,12 @@ class Pandemic:
     discard = []
 
     def startup():
-        player_count = int(input("Welcome to Pandemic! How many players will be in this game? "))
-        epi_count = int(input("How many EPIDEMIC cards will you be playing with? "))
+        #COMMENT FOR DEBUG PURPOSES
+        #player_count = int(input("Welcome to Pandemic! How many players will be in this game? "))
+        player_count = 3
+        #COMMENT FOR DEBUG PURPOSES
+        #epi_count = int(input("How many EPIDEMIC cards will you be playing with? "))
+        epi_count = 4
         if player_count < 2:
             print('Player count invalid! Restarting')
             return
@@ -86,6 +90,7 @@ class Pandemic:
         for player_num in player_data:
             if player_data.get(player_num)[0] == True:
                 temp_hand = []
+                
                 temp_hand.append(input(f'What cards did player {player_num} draw? Enter one at a time, then press ENTER '))
                 temp_hand.append(input(f'What cards did player {player_num} draw? Enter one at a time, then press ENTER '))
                 for j in temp_hand:
